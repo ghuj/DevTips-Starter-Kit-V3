@@ -1,0 +1,10 @@
+@use "sass:color"
+
+a
+  color: #0074D9
+  text-decoration: none
+  outline: 0
+
+  &:hover,
+  &:focus
+    color: color.adjust(#0074D9, $lightness: 20%)
