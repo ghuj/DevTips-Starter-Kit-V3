@@ -8,14 +8,15 @@ This is the third version of the DevTips Starter Kit. All packages, including Gu
 
 
 ## Requeriments
-This project have some requeriments you need to meet in order to compile it. First of all, you need NodeJS in order to run javascript on the console, you can go to the [NodeJS](http://nodejs.rg) site and follow trough the installation process. After you get the `node` command on the console you will have the node package manager `npm` as well. Now you need to install Gulp  globally with the following command.
+This project have some requeriments you need to meet in order to compile it. First of all, you need NodeJS in order to run javascript on the console, you can go to the [NodeJS](http://nodejs.org) site and follow trough the installation process. After you get the `node` command on the console you will have the node package manager `npm` as well. Now you need to install Gulp  globally with the following command.
+
 
 
 
 ## Install
 In order to start using the project you need to clone it to your pc. You can download the the zip version from [here](#) or clone the project with the git command.
 ```
-git clone -b Gulp-Starter-Kit --single-branch https://github.com/mriverodorta/DevTips-Starter-Kit.git project-name
+git clone -b Gulp-Starter-Kit --single-branch https://github.com/ghuj/DevTips-Starter-Kit-V3.git project-name
 git clone https://blablabla.github.com new-project
 ```
 After you have it on you pc, you need to go in the console to the project folder and execute the following command to gather all the dependencies.
