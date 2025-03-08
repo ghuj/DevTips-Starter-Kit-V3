@@ -1,10 +1,10 @@
-<<<<<<< HEAD
-# DevTips-Starter-Kit-V3
-=======
 # DevTips-Starter-Kit Gulp Version
 
-Use this as a simple structure for a simple start to a simple site.
+HTML5 Boilerplate is a powerful front-end template for the development of fast, robust and flexible web applications or websites.
 
+It is based on over ten years of continuous development and the accumulated knowledge of the community. As it does not prescribe a specific development philosophy or framework, you have the freedom to design your code according to your own ideas.
+
+This is the third version of the DevTips Starter Kit. All packages, including Gulp and other dependencies, have been updated and brought up to date.
 
 
 ## Requeriments
@@ -44,4 +44,3 @@ If you are in development, the `gulp start` command is the best choice for you. 
 
 ## Configuration
 This project have some nice configuration options to meet all you needs. To configure you need to edit the `config.js` file and change any value you need. Every aspect of this configuration is described in the file so that you know the options.
->>>>>>> 715f95d (New Version)
