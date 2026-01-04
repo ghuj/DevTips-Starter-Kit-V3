@@ -22,10 +22,10 @@
   "author": "Thomas Lanza <thomaslanza@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^3.0.4",
-    "del": "^8.0.1",
-    "glob": "^13.0.0",
-    "gulp": "^5.0.1",
+    "browser-sync": "^2.29.3",
+    "del": "^6.1.1",
+    "glob": "^8.1.0",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-deporder": "^1.2.0",
@@ -33,13 +33,13 @@
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^5.0.0",
-    "gulp-sass": "^6.0.1",
-    "gulp-size": "^5.0.0",
-    "gulp-strip-debug": "^7.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-size": "^4.0.1",
+    "gulp-strip-debug": "^4.0.0",
     "gulp-uglify": "^3.0.2",
     "jshint": "^2.13.6",
     "jshint-stylish": "^2.2.1",
-    "rimraf": "^6.1.2",
-    "sass": "^1.97.1"
+    "rimraf": "^3.0.2",
+    "sass": "^1.69.5"
   }
 }

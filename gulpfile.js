@@ -6,7 +6,7 @@
 // Include gulp plugins
 const gulp = require('gulp');
 const browsersync = require('browser-sync').create();
-const { deleteAsync } = require('del');
+const del = require('del');
 const config = require('./config.js')();
 const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
@@ -71,24 +71,28 @@ console.log(pkg.name + ' ' + pkg.version + ' ' + config.environment + ' build');
  * Tasks
  */
 //Clean the build folder
-gulp.task('clean', async () => {
+gulp.task('clean', () => {
   console.log('-> Cleaning build folder');
-  await deleteAsync([dest + '**/*']);
+  return del([dest + '**/*']);
 });
 
 // Compile Javascript files
-gulp.task('js', async () => {
+gulp.task('js', () => {
   console.log(devBuild ? '-> Compiling Javascript for Development' : '-> Compiling Javascript for Production');
   
-  if (!devBuild) {
-    await deleteAsync([dest + 'js/*']);
-  }
-
-  return gulp.src(js.in)
+  let stream = gulp.src(js.in)
     .pipe(plumber())
     .pipe(deporder())
-    .pipe(concat(js.filename))
-    .pipe(devBuild ? gulp.dest(js.out) : uglify().pipe(gulp.dest(js.out)));
+    .pipe(concat(js.filename));
+    
+  if (devBuild) {
+    return stream.pipe(gulp.dest(js.out));
+  } else {
+    return stream
+      .pipe(stripDebug())
+      .pipe(uglify())
+      .pipe(gulp.dest(js.out));
+  }
 });
 
 // Update images on build folder
@@ -154,7 +158,7 @@ gulp.task('build',
 );
 
 // Watch Task
-gulp.task('watch', gulp.series('build', () => {
+gulp.task('watch', gulp.series('build', (done) => {
   browsersync.init(syncOpt);
   
   gulp.watch(styles.watch, gulp.series('sass'));
@@ -165,6 +169,8 @@ gulp.task('watch', gulp.series('build', () => {
 
   // Watch for any changes in the dest directory
   gulp.watch(dest + '**/*').on('change', browsersync.reload);
+  
+  done(); // Signal task completion
 }));
 
 // Compile and Watch task
